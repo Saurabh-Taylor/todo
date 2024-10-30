@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-100 min-h-screen transition-colors duration-200;
+  }
+  
+  body.dark {
+    @apply bg-gray-900;
+  }
+}
+
+.glass-effect {
+  @apply bg-white/80 backdrop-blur-lg transition-colors duration-200;
+}
+
+.dark .glass-effect {
+  @apply bg-gray-800/80 backdrop-blur-lg;
+}
+
+.todo-container {
+  @apply animate-fade-in;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
